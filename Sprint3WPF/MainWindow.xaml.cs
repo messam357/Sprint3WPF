@@ -25,7 +25,7 @@ namespace Sprint3WPF
         public MainWindow()
         {
             InitializeComponent();
-          
+
         }
 
         private double _matKonst = 0;
@@ -162,7 +162,7 @@ namespace Sprint3WPF
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Rechteckprofil(Hoehe) + "mm");
                     txtMasse.Text = (berechnungGewicht_Rechteckprofil(Breite, Hoehe, Laenge) + "g");
-                    new CatiaControl(Breite,Hoehe,Laenge);
+                    new CatiaControl(Breite, Hoehe, Laenge);
                 }
 
                 catch (FormatException)
@@ -236,7 +236,7 @@ namespace Sprint3WPF
         public void btn_brechnung_Rundprofil_Click(object sender, RoutedEventArgs e)
 
         {
-            
+
             bool checkmate = false;
             do
             {
@@ -272,7 +272,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Rundprofil(Durchmesser, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
-
+                    new CatiaControlRundprofil(Durchmesser, Laenge);
 
                 }
 
@@ -378,7 +378,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Rundprofil(Durchmesser, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
-
+                    new CatiaControlRohrprofil(Durchmesser, Dicke, Laenge);
                 }
 
                 catch (FormatException)
@@ -958,48 +958,28 @@ namespace Sprint3WPF
     }
 
 
-   public class CatiaControl
+    public class CatiaControl
     {
-     public CatiaControl(double Breite,double Hoehe, double Laenge)
+        public CatiaControl(double Breite, double Hoehe, double Laenge)
         {
             try
             {
 
-                CatiaConnection cc = new CatiaConnection();
+                CatiaConnectionRechteckProfil cc = new CatiaConnectionRechteckProfil();
+
+
 
                 // Finde Catia Prozess
                 if (cc.CATIALaeuft())
                 {
 
-                    //Console.WriteLine("0");
 
-                    // Öffne ein neues Part
-                  //  cc.ErzeugePart();
-                   // Console.WriteLine("1");
-
-                    // Erstelle eine Skizze
-                   // cc.ErstelleLeereSkizze();
-                  //  Console.WriteLine("2");
-
-                    // Generiere ein Profil
-                   // cc.ErzeugeProfil(20, 10);
-                    //Console.WriteLine("3");
-
-                    // Extrudiere Balken
-                   // cc.ErzeugeBalken(300);
-                   // Console.WriteLine("4");
-
-                    // cc.setMaterial();
-
-                    // cc.Screenshot("test");
-                   // Console.WriteLine("5");
 
                     cc.openFile();
-                    //Console.WriteLine("6");
-                     cc.changeUserParameter(Breite,Hoehe,Laenge);
 
-                   // cc.FEM();
-                    //Console.WriteLine("7");
+                    cc.changeUserParameter(Breite, Hoehe, Laenge);
+
+
 
                 }
                 else
@@ -1016,13 +996,101 @@ namespace Sprint3WPF
                 Console.WriteLine(ex.InnerException);
             }
             Console.WriteLine("Fertig - Taste drücken.");
-           // Console.ReadKey();
+            // Console.ReadKey();
 
         }
 
-      
+
     }
 
+    public class CatiaControlRundprofil
+    {
+
+        public CatiaControlRundprofil(double Durchmesser, double Laenge)
+        {
+            try
+            {
+
+                CatiaConnectionRundProfil cc = new CatiaConnectionRundProfil();
+                //  CatiaConnectionRundProfil cc = new CatiaConnectionRundProfil();
 
 
+                // Finde Catia Prozess
+                if (cc.CATIALaeuft())
+                {
+
+
+
+                    cc.openFile();
+
+                    cc.changeUserParameter(Durchmesser, Laenge);
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Laufende Catia Application nicht gefunden");
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message, "Exception aufgetreten");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Source);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.InnerException);
+            }
+            Console.WriteLine("Fertig - Taste drücken.");
+            // Console.ReadKey();
+
+        }
+
+
+
+    }
+
+    public class CatiaControlRohrprofil
+    {
+
+        public CatiaControlRohrprofil(double Durchmesser, double Dicke, double Laenge)
+        {
+            try
+            {
+
+                CatiaConnectionRohrProfil cc = new CatiaConnectionRohrProfil();
+                //  CatiaConnectionRundProfil cc = new CatiaConnectionRundProfil();
+
+
+                // Finde Catia Prozess
+                if (cc.CATIALaeuft())
+                {
+
+
+
+                    cc.openFile();
+
+                    cc.changeUserParameter(Durchmesser, Dicke, Laenge);
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Laufende Catia Application nicht gefunden");
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message, "Exception aufgetreten");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Source);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.InnerException);
+            }
+            Console.WriteLine("Fertig - Taste drücken.");
+            // Console.ReadKey();
+
+        }
+
+
+    }
 }
