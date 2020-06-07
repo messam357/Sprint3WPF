@@ -162,7 +162,7 @@ namespace Sprint3WPF
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Rechteckprofil(Hoehe) + "mm");
                     txtMasse.Text = (berechnungGewicht_Rechteckprofil(Breite, Hoehe, Laenge) + "g");
-                    new CatiaControl();
+                    new CatiaControl(Breite,Hoehe,Laenge);
                 }
 
                 catch (FormatException)
@@ -960,7 +960,7 @@ namespace Sprint3WPF
 
    public class CatiaControl
     {
-     public CatiaControl()
+     public CatiaControl(double Breite,double Hoehe, double Laenge)
         {
             try
             {
@@ -971,35 +971,35 @@ namespace Sprint3WPF
                 if (cc.CATIALaeuft())
                 {
 
-                    Console.WriteLine("0");
+                    //Console.WriteLine("0");
 
                     // Öffne ein neues Part
-                    cc.ErzeugePart();
-                    Console.WriteLine("1");
+                  //  cc.ErzeugePart();
+                   // Console.WriteLine("1");
 
                     // Erstelle eine Skizze
-                    cc.ErstelleLeereSkizze();
-                    Console.WriteLine("2");
+                   // cc.ErstelleLeereSkizze();
+                  //  Console.WriteLine("2");
 
                     // Generiere ein Profil
-                    cc.ErzeugeProfil(20, 10);
-                    Console.WriteLine("3");
+                   // cc.ErzeugeProfil(20, 10);
+                    //Console.WriteLine("3");
 
                     // Extrudiere Balken
-                    cc.ErzeugeBalken(300);
-                    Console.WriteLine("4");
+                   // cc.ErzeugeBalken(300);
+                   // Console.WriteLine("4");
 
                     // cc.setMaterial();
 
                     // cc.Screenshot("test");
-                    Console.WriteLine("5");
+                   // Console.WriteLine("5");
 
-                    //cc.openFile();
-                    Console.WriteLine("6");
-                    // cc.changeUserParameter(2);
+                    cc.openFile();
+                    //Console.WriteLine("6");
+                     cc.changeUserParameter(Breite,Hoehe,Laenge);
 
                    // cc.FEM();
-                    Console.WriteLine("7");
+                    //Console.WriteLine("7");
 
                 }
                 else

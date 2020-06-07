@@ -178,71 +178,42 @@ namespace Sprint3WPF
 
 
 
-        // Zur Erstellung eines Screenshots mit weißem Hintergrund
-       /* public void Screenshot(string bildname)
-        {
-
-            object[] arr1 = new object[3];
-            hsp_catiaApp.ActiveWindow.ActiveViewer.GetBackgroundColor(arr1);
-            Console.WriteLine("Col: " + arr1[0] + " " + arr1[1] + " " + arr1[2]);
-            
-            object[] arr2 = new object[] { 1, 1, 1 };
-            hsp_catiaApp.ActiveWindow.ActiveViewer.PutBackgroundColor(arr2);
-
-            hsp_catiaApp.StartCommand("CompassDisplayOff");
-            hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
-
-            // hsp_catiaApp.ActiveWindow.ActiveViewer.Viewpoint3D = INFITF.Viewpoint3D;
-            //int[] color = new int[3]; // Hintergundfarbe in Weiß setzen
-            //color[0] = 1;
-            //color[1] = 1;
-            //color[2] = 1;
-            // CATSafeArray color[] = new CATSafeArrayVariant[3];
-
-            INFITF.SettingControllers settingControllers1 = hsp_catiaApp.SettingControllers;
-            //INFITF.VisualizationSettingAtt visualizationSettingAtt1 = settingControllers1.Item("CATVizVisualizationSettingCtrl");
-
-            // hsp_catiaApp.ActiveWindow.ActiveViewer.PutBackgroundColor(color);
-
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatBMP, "C:\\Temp\\" + bildname + ".bmp");
-        } */
+       
 
         // Öffnen einer bestehenden Datei in Catia
-    
-
-
-       /* public void changeUserParameter(double parameterWert)
+        public void openFile()
         {
-            // Neuen Parameter erzeugen
-            KnowledgewareTypeLib.Dimension meineLaenge1 = hsp_catiaPart.Part.Parameters.CreateDimension("TestParameter", "LENGTH", 0.000000);
-            meineLaenge1.Rename("CreatedDimension");
-            meineLaenge1.Value = 42;
 
-            // Parameter ändern : Variante 1 - mit foreach Schleife für die Suche
-            // TestLaenge (Parameter in einer Datei) verändern
+            hsp_catiaPart = (PartDocument)hsp_catiaApp.Documents.Open(@"C:\Users\Thomas\source\repos\Sprint3WPF\Sprint3WPF\bin\Debug\Rechteckprofil.CATPart");
+
+
+
+        }
+
+
+        public void changeUserParameter(double parameterWert, double parameterWert2, double parameterWert3)
+        {
+           
             KnowledgewareTypeLib.Parameters paras = hsp_catiaPart.Part.Parameters;
 
-            MessageBox.Show(" " + paras.Count + " "); // Test: haben wir was gefunden? Wieviel?
+           
 
-            foreach (KnowledgewareTypeLib.Parameter para in paras)
-            {
-                if (para.get_Name().Contains("TestLaenge"))
-                {
-                    // Parameter können auch 
-                    KnowledgewareTypeLib.Dimension paraDim = (KnowledgewareTypeLib.Dimension)para;
-                    paraDim.Value = parameterWert;
-
-                    MessageBox.Show("Gefunden: " + para.GetType() + " " + para.get_Name() + Environment.NewLine);
-                }
-            }
+           
 
             // Parameter ändern : Variante 2 - direkter Zugriff auf die komplexe Datenstruktur
-            KnowledgewareTypeLib.Dimension paraDim2 = paras.GetItem("TestLaenge") as KnowledgewareTypeLib.Dimension;
+            KnowledgewareTypeLib.Dimension paraDim2 = paras.GetItem("Breite") as KnowledgewareTypeLib.Dimension;
             paraDim2.Value = parameterWert+2;
 
+            KnowledgewareTypeLib.Dimension paraDim3 = paras.GetItem("Laenge") as KnowledgewareTypeLib.Dimension;
+            paraDim3.Value = parameterWert2 + 2;
+
+            KnowledgewareTypeLib.Dimension paraDim4 = paras.GetItem("Tiefe") as KnowledgewareTypeLib.Dimension;
+            paraDim4.Value = parameterWert3 + 2;
+
+            hsp_catiaPart.Part.Update();
         } 
 
-        internal void FEM()
+       /* internal void FEM()
         {
             // Umgebung aktivieren
             PartDocument mydoc = (PartDocument)hsp_catiaApp.ActiveDocument;
