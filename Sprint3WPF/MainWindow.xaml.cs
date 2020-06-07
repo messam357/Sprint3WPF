@@ -499,7 +499,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
-
+                    new CatiaControlRechteckrohrprofil(Breite,Hoehe,Dicke,Laenge);
                 }
 
                 catch (FormatException)
@@ -657,7 +657,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Hoehe_H) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
-
+                    new CatiaControlTprofil(Breite_B, Breite_b, Hoehe_h, Hoehe_H, Laenge_l);
                 }
 
                 catch (FormatException)
@@ -1093,4 +1093,97 @@ namespace Sprint3WPF
 
 
     }
+
+    public class CatiaControlRechteckrohrprofil
+    {
+
+        public CatiaControlRechteckrohrprofil(double Breite, double Dicke, double Laenge, double Hoehe)
+        {
+            try
+            {
+
+                CatiaConnectionRechteckrohrprofil cc = new CatiaConnectionRechteckrohrprofil();
+             
+
+
+                // Finde Catia Prozess
+                if (cc.CATIALaeuft())
+                {
+
+
+
+                    cc.openFile();
+
+                    cc.changeUserParameter(Breite, Dicke, Laenge,Hoehe);
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Laufende Catia Application nicht gefunden");
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message, "Exception aufgetreten");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Source);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.InnerException);
+            }
+            Console.WriteLine("Fertig - Taste drücken.");
+            // Console.ReadKey();
+
+        }
+
+
+    }
+
+    public class CatiaControlTprofil
+    {
+
+        public CatiaControlTprofil(double Breite_b, double Breite_B, double Hoehe_h, double Hoehe_H, double Laenge_1)
+        {
+            try
+            {
+
+                CatiaConnectionTprofil cc = new CatiaConnectionTprofil();
+
+
+
+                // Finde Catia Prozess
+                if (cc.CATIALaeuft())
+                {
+
+
+
+                    cc.openFile();
+
+                    cc.changeUserParameter(Breite_b, Breite_B, Hoehe_h, Hoehe_H, Laenge_1);
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Laufende Catia Application nicht gefunden");
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message, "Exception aufgetreten");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Source);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.InnerException);
+            }
+            Console.WriteLine("Fertig - Taste drücken.");
+            // Console.ReadKey();
+
+        }
+
+
+    }
+
+
+
 }

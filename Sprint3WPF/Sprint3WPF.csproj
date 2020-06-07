@@ -88,8 +88,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CatiaConnection.cs" />
+    <Compile Include="CatiaConnectionRechteckrohrprofil.cs" />
     <Compile Include="CatiaConnectionRohrProfil.cs" />
     <Compile Include="CatiaConnectionRundProfil.cs" />
+    <Compile Include="CatiaConnectionTprofil.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
