@@ -37,7 +37,7 @@ namespace Sprint3WPF
         public void openFile()
         {
 
-            hsp_catiaPart = (PartDocument)hsp_catiaApp.Documents.Open(@"C:\Users\Thomas\source\repos\Sprint3WPF\Sprint3WPF\bin\Debug\Rohrprofil.CATPart");
+            hsp_catiaPart = (PartDocument)hsp_catiaApp.Documents.NewFrom(@"C:\Users\Thomas\source\repos\Sprint3WPF\Sprint3WPF\bin\Debug\Rohrprofil.CATPart");
 
 
 
