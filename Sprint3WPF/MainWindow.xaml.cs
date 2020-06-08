@@ -27,7 +27,8 @@ namespace Sprint3WPF
         public MainWindow()
         {
             InitializeComponent();
-
+           Window window = new Window1();
+            window.Show();
         }
 
         private double _matKonst = 0;
