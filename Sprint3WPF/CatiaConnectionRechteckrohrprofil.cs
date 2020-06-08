@@ -29,6 +29,8 @@ namespace Sprint3WPF
             }
             catch (Exception)
             {
+                GIFFenster window = new GIFFenster();
+                window.Show();
                 MessageBox.Show("Um die Catia-Erweiterung zu starten, bitte CATIA V5 starten");
                 return false;
             }

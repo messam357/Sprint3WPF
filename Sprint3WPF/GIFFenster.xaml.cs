@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace Sprint3WPF
 {
     /// <summary>
-    /// Interaktionslogik für Window1.xaml
+    /// Interaktionslogik für GIFFenster.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class GIFFenster : Window
     {
-        public Window1()
+        public GIFFenster()
         {
             InitializeComponent();
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }
