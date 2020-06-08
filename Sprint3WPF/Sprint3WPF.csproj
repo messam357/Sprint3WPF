@@ -114,6 +114,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="CatiaModelle\Rechteckprofil.CATPart" />
+    <None Include="CatiaModelle\Rechteckrohrprofil.CATPart" />
+    <None Include="CatiaModelle\Rohrprofil.CATPart" />
+    <None Include="CatiaModelle\Rundprofil.CATPart" />
+    <None Include="CatiaModelle\Tprofil.CATPart" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
