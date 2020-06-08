@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using INFITF;
 using MECMOD;
 using PARTITF;
-
+using System.Windows;
 
 namespace Sprint3WPF
 {
@@ -29,7 +29,8 @@ namespace Sprint3WPF
                 }
                 catch (Exception)
                 {
-                    return false;
+                MessageBox.Show("Um die Catia-Erweiterung zu starten, bitte CATIA V5 starten");
+                return false;
                 }
             }
 
@@ -71,6 +72,7 @@ namespace Sprint3WPF
 
 
             hsp_catiaPart.Part.Update();
+
             }
         }
     

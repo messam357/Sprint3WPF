@@ -14,7 +14,7 @@ namespace Sprint3WPF
         INFITF.Application hsp_catiaApp;
         MECMOD.PartDocument hsp_catiaPart;
         MECMOD.Sketch hsp_catiaProfil;
-
+        
         public bool CATIALaeuft()
         {
             try
@@ -26,7 +26,7 @@ namespace Sprint3WPF
             }
             catch (Exception)
             {
-                MessageBox.Show("CAT Anwendung Läuft nicht");
+                MessageBox.Show("Um die Catia-Erweiterung zu starten, bitte CATIA V5 starten");
                 return false;
 
             }
@@ -40,11 +40,7 @@ namespace Sprint3WPF
         // Öffnen einer bestehenden Datei in Catia
         public void openFile()
         {
-
             hsp_catiaPart = (PartDocument)hsp_catiaApp.Documents.Open(@"C:\Users\Thomas\source\repos\Sprint3WPF\Sprint3WPF\bin\Debug\Rechteckprofil.CATPart");
-
-
-
         }
 
 
@@ -52,10 +48,6 @@ namespace Sprint3WPF
         {
            
             KnowledgewareTypeLib.Parameters paras = hsp_catiaPart.Part.Parameters;
-
-           
-
-           
 
             // Parameter ändern : Variante 2 - direkter Zugriff auf die komplexe Datenstruktur
             KnowledgewareTypeLib.Dimension paraDim2 = paras.GetItem("Breite") as KnowledgewareTypeLib.Dimension;
@@ -68,9 +60,8 @@ namespace Sprint3WPF
             paraDim4.Value = parameterWert3;
 
             hsp_catiaPart.Part.Update();
+            
+
         } 
-
-       
-
     }
 }
