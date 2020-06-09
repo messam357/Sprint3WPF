@@ -961,6 +961,31 @@ namespace Sprint3WPF
 
 
         }
+                //Skizze buttons
+        private void btn_skizze_Rechteckprofil_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_skizze_Rundprofil_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_skizze_Rohrprofil_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_skizze_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_skizze_Tprofil_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 

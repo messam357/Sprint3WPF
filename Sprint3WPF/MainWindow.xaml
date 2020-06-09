@@ -74,7 +74,8 @@
 
 
             <TreeView x:Name="Profilauswahl" Margin="0,80,215,250" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
-               
+                <TreeViewItem Header="Profil Auswahl" IsExpanded="False">
+                </TreeViewItem>
 
                 <TreeViewItem Header="Vollprofil" IsExpanded="False">
                     <TreeViewItem x:Name="Rechteckprofil" Header="Rechteckprofil" Selected="Rechteckprofil_selected" />
@@ -99,6 +100,7 @@
                 <ComboBoxItem x:Name="Combobox_Aluminium" Content="Aluminium" ></ComboBoxItem>
                 <ComboBoxItem x:Name="Combobox_Kupfer" Content="Kupfer" ></ComboBoxItem>
             </ComboBox>
+           
 
         </Grid>
 
@@ -124,6 +126,7 @@
             <Line x:Name="laenge_Rechteck" X1="35" Y1=" 126" X2=" 195" Y2=" 220" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
             <Line x:Name="breite_Rechteck" X1="240" Y1=" 223" X2="270" Y2=" 205" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
             <Line x:Name="hoehe_Rechteck" X1="260" Y1=" 135" X2="260" Y2=" 185" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Button Content="Skizze" HorizontalAlignment="Left" Margin="-69,257,0,-43" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_skizze_Rechteckprofil" Click="btn_skizze_Rechteckprofil_Click" />
 
         </Grid>
 
@@ -145,6 +148,7 @@
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-69,212,0,0" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_brechnung_rundprofil" Click="btn_brechnung_Rundprofil_Click"/>
             <Line x:Name="laenge_Rund" X1="55" Y1=" 137" X2=" 220" Y2=" 230" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
             <Line x:Name="durchmesser_Rund" X1="233" Y1="175" X2="262" Y2=" 192" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Button Content="Skizze" HorizontalAlignment="Left" Margin="-69,257,0,-43" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_skizze_rundprofil" Click="btn_skizze_Rundprofil_Click"/>
 
         </Grid>
 
@@ -170,6 +174,7 @@
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-69,212,0,0" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_berechnung_rohrprofil" Click="btn_berechnung_Rohrprofil_Click"/>
             <Line x:Name="laenge_rohr" X1="43" Y1=" 137" X2=" 195" Y2=" 225" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
             <Line x:Name="durchmesser_rohr" X1="210" Y1="180" X2="232" Y2=" 192" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Button Content="Skizze" HorizontalAlignment="Left" Margin="-69,257,0,-43" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_skizze_rohrprofil" Click="btn_skizze_Rohrprofil_Click"/>
 
         </Grid>
 
@@ -201,10 +206,11 @@
             <Line x:Name="laenge_rechteckrohr" X1="38" Y1=" 137" X2=" 210" Y2=" 238" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
             <Line x:Name="hoehe_rechteckrohr" X1="285" Y1="140" X2="285" Y2=" 190" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
             <Line x:Name="breite_rechteckrohr" X1="260" Y1=" 230" X2=" 283" Y2=" 215" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Button Content="Skizze" HorizontalAlignment="Left" Margin="-69,257,0,-43" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_skizze_rechteckrohrprofil" Click="btn_skizze_rechteckrohrprofil_Click"/>
 
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Hidden">
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Visible">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -235,6 +241,7 @@
             <Line x:Name="breite_B_tprofil" X1="270" Y1="158" X2="270" Y2=" 175" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
             <Line x:Name="hoehe_H_tprofil" X1="225" Y1=" 217" X2=" 262" Y2=" 195" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
             <Line x:Name="hoehe_h_tprofil" X1="205" Y1=" 148" X2=" 218" Y2=" 140" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Button Content="Skizze" HorizontalAlignment="Left" Margin="-69,257,0,-43" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_skizze_Tprofil" Click="btn_skizze_Tprofil_Click" Visibility="Visible" />
 
         </Grid>
 

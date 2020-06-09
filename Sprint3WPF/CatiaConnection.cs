@@ -43,7 +43,7 @@ namespace Sprint3WPF
         // Öffnen einer bestehenden Datei in Catia
         public void openFile()
         {
-            hsp_catiaPart = (PartDocument)hsp_catiaApp.Documents.NewFrom(@"\Sprint3WPF\CatiaModelle\Rechteckprofil.CATPart");
+            hsp_catiaPart = (PartDocument)hsp_catiaApp.Documents.NewFrom(@"C:\Users\Essam Asian Man\source\repos\Sprint3WPF\Sprint3WPF\CatiaModelle\Rechteckprofil.CATPart");
         }
 
 
