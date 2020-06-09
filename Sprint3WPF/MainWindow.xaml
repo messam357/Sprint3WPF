@@ -210,7 +210,7 @@
 
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Visible">
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>

@@ -165,7 +165,7 @@ namespace Sprint3WPF
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Rechteckprofil(Hoehe) + "mm");
                     txtMasse.Text = (berechnungGewicht_Rechteckprofil(Breite, Hoehe, Laenge) + "g");
-                    new CatiaControl(Breite, Hoehe, Laenge);
+                   
                    
 
 
@@ -664,6 +664,9 @@ namespace Sprint3WPF
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Hoehe_H) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
                     new CatiaControlTprofil(Breite_B, Breite_b, Hoehe_h, Hoehe_H, Laenge_l);
+
+                    
+
                 }
 
                 catch (FormatException)
@@ -867,7 +870,6 @@ namespace Sprint3WPF
 
             hoehe_rechteckrohr.Visibility = Visibility.Hidden;
         }
-
         private void breite_b_anzeigen_tprofil(object sender, System.Windows.Input.MouseEventArgs e)
         {
 
@@ -964,7 +966,23 @@ namespace Sprint3WPF
                 //Skizze buttons
         private void btn_skizze_Rechteckprofil_Click(object sender, RoutedEventArgs e)
         {
+            bool checkmate = false;
+            do
+            { 
+                try
+                {
 
+                    double Breite = double.Parse(txtbox_rechteckprofil_b.Text);
+                    double Hoehe = double.Parse(txtbox_rechteckprofil_h.Text);
+                    double Laenge = double.Parse(txtbox_rechteckprofil_l.Text);
+                    new CatiaControl(Breite, Hoehe, Laenge);
+
+                }
+                catch (Exception)
+                { 
+                }
+            }
+            while(checkmate);
         }
 
         private void btn_skizze_Rundprofil_Click(object sender, RoutedEventArgs e)
@@ -974,6 +992,24 @@ namespace Sprint3WPF
 
         private void btn_skizze_Rohrprofil_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
