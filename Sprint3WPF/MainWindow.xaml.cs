@@ -987,39 +987,84 @@ namespace Sprint3WPF
 
         private void btn_skizze_Rundprofil_Click(object sender, RoutedEventArgs e)
         {
+            bool checkmate = false;
+            do
+            {
+                try
+                {
+                    double Durchmesser = double.Parse(txtbox_rundprofil_dm.Text);
+                    double Laenge = double.Parse(txtbox_rundprofil_l.Text);
+                    new CatiaControlRundprofil(Durchmesser, Laenge);
 
+                }
+                catch (Exception)
+                {
+                }
+
+            }
+            while (checkmate);
         }
 
         private void btn_skizze_Rohrprofil_Click(object sender, RoutedEventArgs e)
         {
+            bool checkmate = false;
+            do
+            {
+                try
+                {
+                    double Durchmesser = double.Parse(txtbox_rohrprofil_dm.Text);
+                    double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
+                    double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
+                    new CatiaControlRohrprofil(Durchmesser, Laenge, Dicke);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                }
+                catch (Exception)
+                {
+                }
+            }
+            while (checkmate);
         }
 
         private void btn_skizze_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
         {
-
+            bool checkmate = false;
+            do
+            {
+                try
+                {
+                    double Breite = double.Parse(txtbox_rechteckrohrprofil_b.Text);
+                    double Hoehe = double.Parse(txtbox_rechteckrohrprofil_h.Text);
+                    double Laenge = double.Parse(txtbox_rechteckrohrprofil_l.Text);
+                    double Dicke = double.Parse(txt_rechteckrohrprofil_d.Text);
+                    new CatiaControlRechteckrohrprofil(Breite, Hoehe, Laenge, Dicke);
+                }
+                catch (Exception)
+                {
+                }
+            }
+            while (checkmate);
+         
         }
 
         private void btn_skizze_Tprofil_Click(object sender, RoutedEventArgs e)
         {
+            bool checkmate = false;
+            do
+            {
+                try
+                {
+                    double Breite_B = double.Parse(txtbox_Tprofil_B.Text);
+                    double Breite_b = double.Parse(txtbox_Tprofil_b.Text);
+                    double Hoehe_H = double.Parse(txtbox_Tprofil_H.Text);
+                    double Hoehe_h = double.Parse(txtbox_Tprofil_h.Text);
+                    double Laenge_l = double.Parse(txtbox_Tprofil_l.Text);
+                    new CatiaControlTprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l);
+                }
+                catch (Exception)
+                {
+                }
+            }
+            while (checkmate);
 
         }
     }
