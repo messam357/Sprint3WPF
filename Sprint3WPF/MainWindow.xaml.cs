@@ -1015,7 +1015,7 @@ namespace Sprint3WPF
                     double Durchmesser = double.Parse(txtbox_rohrprofil_dm.Text);
                     double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
                     double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
-                    new CatiaControlRohrprofil(Durchmesser, Laenge, Dicke);
+                    new CatiaControlRohrprofil(Durchmesser, Dicke, Laenge);
 
                 }
                 catch (Exception)
@@ -1058,7 +1058,7 @@ namespace Sprint3WPF
                     double Hoehe_H = double.Parse(txtbox_Tprofil_H.Text);
                     double Hoehe_h = double.Parse(txtbox_Tprofil_h.Text);
                     double Laenge_l = double.Parse(txtbox_Tprofil_l.Text);
-                    new CatiaControlTprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l);
+                    new CatiaControlTprofil(Breite_b, Breite_B, Hoehe_h, Hoehe_H, Laenge_l);
                 }
                 catch (Exception)
                 {
@@ -1209,7 +1209,7 @@ namespace Sprint3WPF
     public class CatiaControlRechteckrohrprofil
     {
 
-        public CatiaControlRechteckrohrprofil(double Breite, double Dicke, double Laenge, double Hoehe)
+        public CatiaControlRechteckrohrprofil(double Breite, double Hoehe, double Laenge, double Dicke)
         {
             try
             {
