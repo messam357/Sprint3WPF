@@ -278,7 +278,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Rundprofil(Durchmesser, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
-                    new CatiaControlRundprofil(Durchmesser, Laenge);
+                    //new CatiaControlRundprofil(Durchmesser, Laenge);
 
                 }
 
@@ -384,7 +384,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Rundprofil(Durchmesser, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
-                    new CatiaControlRohrprofil(Durchmesser, Dicke, Laenge);
+                   // new CatiaControlRohrprofil(Durchmesser, Dicke, Laenge);
                 }
 
                 catch (FormatException)
@@ -505,7 +505,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
-                    new CatiaControlRechteckrohrprofil(Breite,Hoehe,Dicke,Laenge);
+                   // new CatiaControlRechteckrohrprofil(Breite,Hoehe,Dicke,Laenge);
                 }
 
                 catch (FormatException)
@@ -663,7 +663,7 @@ namespace Sprint3WPF
                     txtMasse.Text = (berechnungGewicht_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Hoehe_H) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
-                    new CatiaControlTprofil(Breite_B, Breite_b, Hoehe_h, Hoehe_H, Laenge_l);
+                    //new CatiaControlTprofil(Breite_B, Breite_b, Hoehe_h, Hoehe_H, Laenge_l);
 
                     
 
